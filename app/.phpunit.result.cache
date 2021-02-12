@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":199:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:2:{s:46:"tests\integration\FileManagerTest::testFileGet";d:0.157;s:77:"tests\unit\FileManager\Repository\FileRepositoryTest::testFindOneByExternalId";d:0.009;}}}
