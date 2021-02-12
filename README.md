@@ -6,7 +6,7 @@
 
 `make test` with running containers or `./vendor/bin/phpunit` inside `app`
 
-### Using
+### Usage
 
 Use postman collection in `_utils` folder.
 
