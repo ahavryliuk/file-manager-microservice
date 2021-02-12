@@ -1,5 +1,6 @@
 <?php
 
+namespace tests\integration;
 
 use Carbon\Carbon;
 use FileManager\Entity\File;

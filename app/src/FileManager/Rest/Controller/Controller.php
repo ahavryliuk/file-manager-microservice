@@ -9,6 +9,12 @@ use Slim\Psr7\Response;
 class Controller
 {
 
+    /**
+     * @param ResponseInterface $response
+     * @param File $file
+     *
+     * @return ResponseInterface
+     */
     public function respondResource(ResponseInterface $response, File $file): ResponseInterface
     {
         return $response

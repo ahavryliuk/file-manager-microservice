@@ -5,3 +5,9 @@
 ### Testing
 
 `make test` with running containers or `./vendor/bin/phpunit` inside `app`
+
+### Using
+
+Use postman collection in `_utils` folder.
+
+For file upload specify your own file.
