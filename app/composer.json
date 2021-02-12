@@ -1,0 +1,36 @@
+{
+  "name": "ahavryliuk/file-manager-microservice",
+  "authors": [
+    {
+      "name": "Andrii Havryliuk",
+      "email": "andrii.viktorovich94@gmail.com"
+    }
+  ],
+  "config": {
+    "platform": {"php": "7.4"}
+  },
+  "require": {
+    "doctrine/dbal": "^2.5",
+    "doctrine/migrations": "^2.0",
+    "monolog/monolog": "^2.0",
+    "php-di/php-di": "^6.3",
+    "slim/psr7": "^1.0",
+    "slim/slim": "^4.7",
+    "nesbot/carbon": "^2.45",
+    "hassankhan/config": "^2.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "FileManager\\": "src/FileManager/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests/"
+    }
+  }
+}
