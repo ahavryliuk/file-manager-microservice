@@ -39,6 +39,7 @@ class FileRepository
         $file->setName($input[File::FIELD_NAME]);
         $file->setResourceUrl($input[File::FIELD_RESOURCE_URL]);
         $file->setResourceMeta(TypeConversionHelper::jsonToArray($input[File::FIELD_RESOURCE_META]) ?? []);
+        $file->setSize($input[File::FIELD_SIZE]);
         $file->setDeleted($input[File::FIELD_DELETED]);
         $file->setCreatedAt(TypeConversionHelper::stringToNullCarbon($input[File::FIELD_CREATED_AT]));
 
@@ -80,6 +81,23 @@ class FileRepository
         }
 
         return $objects;
+    }
+
+    /**
+     * @return int
+     *
+     * @throws \Doctrine\DBAL\Exception
+     */
+    public function calculateUsedStorageSpace(): int
+    {
+        $sql = sprintf("SELECT SUM(`%s`) FROM `%s`", File::FIELD_SIZE, self::TABLE);
+        $sum = $this->connection->fetchOne($sql);
+
+        if (empty($sum)) {
+            return 0;
+        }
+
+        return $sum;
     }
 
     /**

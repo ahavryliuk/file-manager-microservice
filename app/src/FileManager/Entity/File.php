@@ -12,6 +12,7 @@ class File implements \JsonSerializable
     public const FIELD_NAME = 'name';
     public const FIELD_RESOURCE_URL = 'resource_url';
     public const FIELD_RESOURCE_META = 'resource_meta';
+    public const FIELD_SIZE = 'size';
     public const FIELD_DELETED = 'deleted';
     public const FIELD_CREATED_AT = 'created_at';
 
@@ -21,6 +22,7 @@ class File implements \JsonSerializable
     private string $name;
     private string $resourceUrl;
     private ?array $resourceMeta;
+    private int $size;
     private bool $deleted;
     private ?Carbon $createdAt = null;
 
@@ -90,6 +92,17 @@ class File implements \JsonSerializable
         return $this;
     }
 
+    public function getSize(): int
+    {
+        return $this->size;
+    }
+
+    public function setSize(int $size): File
+    {
+        $this->size = $size;
+        return $this;
+    }
+
     public function isDeleted(): bool
     {
         return $this->deleted;
@@ -121,6 +134,7 @@ class File implements \JsonSerializable
             self::FIELD_NAME => $this->name,
             self::FIELD_RESOURCE_URL => $this->resourceUrl,
             self::FIELD_RESOURCE_META => $this->resourceMeta ?? null,
+            self::FIELD_SIZE => $this->size,
             self::FIELD_DELETED => (int)$this->deleted,
             self::FIELD_CREATED_AT => $this->createdAt instanceof Carbon ? $this->createdAt->toDateTimeString() : null,
         ];

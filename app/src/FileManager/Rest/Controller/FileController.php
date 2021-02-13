@@ -88,6 +88,7 @@ class FileController extends Controller
                 'client_file_media_type' => $uploadedFile->getClientMediaType(),
                 'client_file_path' => $uploadedFile->getFilePath(),
             ])
+            ->setSize(filesize($url))
             ->setDeleted(false);
 
         $this->fileRepository->persist($file);
@@ -153,19 +154,10 @@ class FileController extends Controller
      */
     public function info(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
-        $files = $this->fileRepository->findAll();
-
-        $uploadedSize = 0;
-
-        /** @var File $file */
-        foreach ($files as $file) {
-            $meta = $file->getResourceMeta();
-
-            $uploadedSize += $meta['client_file_size'];
-        }
+        $usedStorageSpace = $this->fileRepository->calculateUsedStorageSpace();
 
         return $this->respond($response, (object)[
-            'uploaded_size' => $uploadedSize
+            'used_storage' => $usedStorageSpace
         ]);
     }
 
