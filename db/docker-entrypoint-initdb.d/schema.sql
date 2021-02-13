@@ -26,3 +26,15 @@ INSERT INTO `file` VALUES (
                            0,
                            current_timestamp()
                            );
+
+INSERT INTO `file` VALUES (
+                           2,
+                           '52699c26de8b69abb535ce8e71d62990494a7216',
+                           'df3ab114502b7b4ac372f136fc61e7701bd27ec3',
+                           'c5dfb9d9d19b7ebae68d3c0ef5c041434de609b1.php',
+                           '/var/www/config/../storage/c5dfb9d9d19b7ebae68d3c0ef5c041434de609b1.php',
+                           '{"client_file_name":"1.php","client_file_size":16,"client_file_media_type":"application\/x-httpd-php","client_file_path":"\/tmp\/phpoaNOLk"}',
+                            16,
+                            0,
+                            current_timestamp()
+                            );

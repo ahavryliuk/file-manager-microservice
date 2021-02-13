@@ -43,6 +43,25 @@
 			"response": []
 		},
 		{
+			"name": "Exec file directly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/storage/c5dfb9d9d19b7ebae68d3c0ef5c041434de609b1.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"storage",
+						"c5dfb9d9d19b7ebae68d3c0ef5c041434de609b1.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "File",
 			"request": {
 				"method": "DELETE",
